@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour 
 {
-    public Slider healthSlider; 
-    public Gun gun;
+    public List<Gun> gunList;
     public float maxHealth;
     public float speed;
 
     Attackable attackable;
     Rigidbody2D rigidbody;
     Camera camera;
-
+    int gunIndex;
 
     // Use this for initialization
     void Start () 
@@ -23,7 +22,8 @@ public class CharacterController : MonoBehaviour
         attackable.health = maxHealth;
         camera = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
-        healthSlider.maxValue = maxHealth;
+        gunIndex = 0;
+        EquipWeapon(gunIndex);
 	}
 	
 	// Update is called once per frame
@@ -67,31 +67,58 @@ public class CharacterController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            gun.MousePressed();
+            gunList[gunIndex].MousePressed();
         }
         if (Input.GetMouseButton(0))
         {
-            gun.MouseHeld();
+            gunList[gunIndex].MouseHeld();
         }
+        else 
+        {
+            gunList[gunIndex].MouseUp();
+        }
+
+        if (Input.mouseScrollDelta.y > 0)
+        {
+            gunIndex++;
+            if (gunIndex >= gunList.Count)
+            {
+                gunIndex = 0;
+            }
+            EquipWeapon(gunIndex);
+        }
+
         UpdateGunPosition();
-        healthSlider.value = attackable.health;
     }
 
-    void UpdateGunPosition()
+    void UpdateGunPosition ()
     {
         // Gun rotates around axis
         Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 toMouse = mousePosition - transform.position;
         toMouse.z = 0;
         toMouse.Normalize();
-        gun.transform.position = transform.position + (0.75f * toMouse);
+        gunList[gunIndex].transform.position = transform.position + (0.75f * toMouse);
         float rot_z = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
-        gun.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-        gun.Direction = toMouse;
+        gunList[gunIndex].transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        gunList[gunIndex].Direction = toMouse;
     }
 
-    public void destroyed()
+    void EquipWeapon(int index)
+    {
+        for (int i = 0; i < gunList.Count; i++)
+        {
+            gunList[i].gameObject.SetActive(i == index);
+        }
+    }
+
+    public void destroyed ()
     {
         GameController.instance.OpenMenu("Game Over");
+    }
+
+    public Gun GetEquippedGun ()
+    {
+        return gunList[gunIndex];
     }
 }
