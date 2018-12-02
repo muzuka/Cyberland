@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour 
 {
@@ -19,7 +20,7 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (menu.activeSelf)
             {
@@ -42,5 +43,15 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1f;
         menu.SetActive(false);
+    }
+
+    public void Restart ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit ()
+    {
+        Application.Quit();
     }
 }
