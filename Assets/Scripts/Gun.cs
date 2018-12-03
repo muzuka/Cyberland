@@ -46,6 +46,15 @@ public class Gun : MonoBehaviour
 
     }
 
+    public void InitializeGun (GunItem item)
+    {
+        GetComponent<SpriteRenderer>().sprite = item.icon;
+        bullet = item.bullet;
+        timeToShoot = item.timeToShoot;
+        timeToReload = item.timeToReload;
+        maxBullets = item.maxBullets;
+    }
+
     public void MousePressed()
     {
         shootTimer.reset();
@@ -62,13 +71,15 @@ public class Gun : MonoBehaviour
         reloadTimer.update(Reload);
     }
 
-    void Shoot () 
+    void Shoot ()
     {
         if (bullets != 0)
         {
             bullets--;
             GameObject newBullet = Instantiate(bullet, transform.position + (bulletOffset * direction), Quaternion.identity);
-            newBullet.GetComponent<Bullet>().Direction = direction;
+            float rot_z = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            newBullet.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            newBullet.GetComponent<Projectile>().Direction = direction;
         }
     }
 
