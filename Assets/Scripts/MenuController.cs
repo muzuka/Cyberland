@@ -8,6 +8,11 @@ public class MenuController : MonoBehaviour {
     public GameObject mainMenu;
     public GameObject loadoutMenu;
 
+    private void Start()
+    {
+        SelectedGuns.clearGuns();
+    }
+
     public void ToLoadout ()
     {
         mainMenu.SetActive(false);
@@ -20,7 +25,7 @@ public class MenuController : MonoBehaviour {
         loadoutMenu.SetActive(false);
     }
 
-    public void Start()
+    public void LoadLevel()
     {
         SceneManager.LoadScene("LevelOne");
     }
