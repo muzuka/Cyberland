@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour
     // Use this for initialization
     void Start () 
     {
+        InitializeGuns();
         attackable = GetComponent<Attackable>();
         attackable.maxHealth = maxHealth;
         attackable.health = maxHealth;
@@ -100,8 +101,28 @@ public class CharacterController : MonoBehaviour
         toMouse.Normalize();
         gunList[gunIndex].transform.position = transform.position + (0.75f * toMouse);
         float rot_z = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
-        gunList[gunIndex].transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        gunList[gunIndex].transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         gunList[gunIndex].Direction = toMouse;
+        gunList[gunIndex].GetComponent<SpriteRenderer>().flipY = mousePosition.x < transform.position.x;
+    }
+
+    void InitializeGuns ()
+    {
+        // gun1
+        if (SelectedGuns.gun1)
+        {
+            gunList[0].InitializeGun(SelectedGuns.gun1);
+        }
+        // gun2
+        if (SelectedGuns.gun2)
+        {
+            gunList[1].InitializeGun(SelectedGuns.gun2);
+        }
+        // gun3
+        if (SelectedGuns.gun3)
+        {
+            gunList[2].InitializeGun(SelectedGuns.gun3);
+        }
     }
 
     void EquipWeapon(int index)
