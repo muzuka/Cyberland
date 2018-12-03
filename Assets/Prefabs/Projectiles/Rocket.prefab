@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212020621056100588}
   - component: {fileID: 50280827114127120}
   - component: {fileID: 70867690695315344}
-  - component: {fileID: 114075753014943018}
+  - component: {fileID: 114413883257603084}
+  - component: {fileID: 114231428081917904}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -78,7 +79,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.25, y: 1}
   m_Direction: 0
---- !u!114 &114075753014943018
+--- !u!114 &114231428081917904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,9 +87,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171631164121160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c15a0ec5ae20c423cacf6036d676eb5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 409b4eeb350314a1297ba921b7c0dae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 15
+  lifetime: 20
+  speed: 20
+--- !u!114 &114413883257603084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1171631164121160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b6a7a405c4842a4bfd31a394eead7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1899773449619180, guid: 55032b78e82c04ab2918708a3350b655, type: 2}
+  damage: 15
 --- !u!212 &212020621056100588
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,12 +141,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 475ff73bea9a64404bad5b4bfe415022, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8c7464fd66cf4b8ca40b598dccd3d8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
