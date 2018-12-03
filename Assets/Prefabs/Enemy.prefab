@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419b89087510c4d58b33614d4e14627d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotTime: 1
+  shotTime: 2
   maxHealth: 10
   gun: {fileID: 114935009524735080}
 --- !u!114 &114423081751721736
@@ -278,5 +278,5 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
