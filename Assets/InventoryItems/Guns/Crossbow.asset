@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 87ceb12fc9f1048038b91cdf7371971b, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1798887908733086, guid: 233715ee3e63445b9a093ec78effc1c4, type: 2}
   maxBullets: 1

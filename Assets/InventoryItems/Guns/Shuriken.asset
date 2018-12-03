@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: Shuriken
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: bec8f5a09bd4349b4aa42f390f1344d6, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1180882178386170, guid: a30e447da496141b085ce5ada1ea3958, type: 2}
   maxBullets: 3

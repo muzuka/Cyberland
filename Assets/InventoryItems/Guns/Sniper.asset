@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 320d822cef41f49d4b4991e97400d3e5, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1631779047519382, guid: b3d95fb80b291425d813dda4cfaabe29, type: 2}
   maxBullets: 10

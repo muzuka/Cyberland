@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a3e584b5c1d764e0280378b45b03de34, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1631779047519382, guid: b3d95fb80b291425d813dda4cfaabe29, type: 2}
   maxBullets: 3

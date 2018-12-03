@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: GrenadeLauncher
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fc3a34f2d5bb5405cb75c7c62c283a94, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1733675868783266, guid: c1b636223117a4994858123c0d46e48b, type: 2}
   maxBullets: 5

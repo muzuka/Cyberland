@@ -11,9 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  texture: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4eb908740f85e4aa2b743282beb25fc8, type: 3}
   bullet: {fileID: 1631779047519382, guid: b3d95fb80b291425d813dda4cfaabe29, type: 2}
   maxBullets: 30
   timeToReload: 0.2
-  timeToShoot: 0.1
+  timeToShoot: 0.05

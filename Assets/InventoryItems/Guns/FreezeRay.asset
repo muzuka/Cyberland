@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d0d2c931004ab080281f719ee3ae2, type: 3}
   m_Name: FreezeRay
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3f9c1cf4a261e4b1caeecdad0e31dbaa, type: 3}
   texture: {fileID: 0}
   bullet: {fileID: 1840155715866170, guid: 4f5b140646a944e208eed807d9fd965d, type: 2}
   maxBullets: 20
